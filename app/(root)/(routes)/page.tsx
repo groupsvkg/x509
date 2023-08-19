@@ -1,7 +1,5 @@
 'use client';
 
-import { UserButton } from '@clerk/nextjs';
-
 import SearchInput from '@/components/search-input';
 
 const RootPage = () => {
