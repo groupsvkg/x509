@@ -18,7 +18,7 @@ const Sidebar = () => {
     {
       icon: Plus,
       href: '/certificate/new',
-      label: 'Create',
+      label: 'Add',
     },
   ];
 
