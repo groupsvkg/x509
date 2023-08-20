@@ -37,7 +37,13 @@ const CertificateIdPage = () => {
       <Textarea
         onChange={onChange}
         rows={15}
-        placeholder="Enter PEM certificate with headers."
+        placeholder={`
+        Enter PEM certificate with headers
+
+        -----BEGIN CERTIFICATE-----
+            <CERTIFICATE CONTENT>
+        -----END CERTIFICATE-----
+        `}
         value={textInput}
         className="bg-primary/25 text-xs text-blue-400"
       />
@@ -47,10 +53,12 @@ const CertificateIdPage = () => {
       >
         Find Certificate Chain
       </Button>
-      <div className={cn('w-full')}>
-        {parsedCert && <Separator className="bg-primary/10" />}
-        {parsedCert && <JsonView src={parsedCert} />}
-      </div>
+      {parsedCert && (
+        <div className={cn('w-full')}>
+          <Separator className="bg-primary/10" />
+          <JsonView src={parsedCert} />
+        </div>
+      )}
     </div>
   );
 };
