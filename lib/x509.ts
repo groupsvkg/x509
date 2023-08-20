@@ -57,7 +57,10 @@ export async function getCertificateChain(
 
   if (cert.subject === cert.issuer) return [{ type: 'root', cert }];
 
-  if (cert.authorityInformationAccess.length === 0)
+  if (
+    cert.authorityInformationAccess.length === 0 ||
+    cert.authorityInformationAccess['CA Issuers'] === undefined
+  )
     return [{ type: 'intermediate', cert }];
 
   const caIssuersCertificate = await getIssuerCertificate(
