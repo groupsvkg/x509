@@ -1,12 +1,6 @@
 'use client';
 
-import { Certificate } from '@prisma/client';
-
-interface CertificatesProps {
-  data: Certificate[];
-}
-
-const Certificates = ({ data }: CertificatesProps) => {
+const Certificates = () => {
   return (
     <div className="w-full h-full overflow-x-auto space-x-2 flex justify-center items-center p-1">
       Certificate list is empty! ({' '}
