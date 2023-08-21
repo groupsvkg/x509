@@ -23,6 +23,8 @@ const CertificateIdPage = () => {
   };
 
   const onClick = async () => {
+    if (!textInput) return;
+
     setIsLoading(true);
     try {
       const response = await axios.post('/api/certificate', {
@@ -48,8 +50,9 @@ const CertificateIdPage = () => {
             <CERTIFICATE CONTENT>
         -----END CERTIFICATE-----
         `}
+        spellCheck={false}
         value={textInput}
-        className="bg-primary/25 text-xs text-blue-400"
+        className="bg-primary/25 text-xs text-cyan-500"
       />
       <Button
         onClick={onClick}

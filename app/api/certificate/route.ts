@@ -5,7 +5,6 @@ import { getCertificateChain, parseCertificate } from '@/lib/x509';
 export async function POST(req: Request) {
   const body = await req.json();
 
-  //   const certificate = parseCertificate(body.cert);
   const certificateChain = await getCertificateChain(body.cert);
 
   return NextResponse.json(certificateChain);
