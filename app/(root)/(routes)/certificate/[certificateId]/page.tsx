@@ -43,13 +43,11 @@ const CertificateIdPage = () => {
       <Textarea
         onChange={onChange}
         rows={15}
-        placeholder={`
-        Enter PEM certificate with headers
+        placeholder={`Enter PEM certificate with headers as shown below
 
-        -----BEGIN CERTIFICATE-----
-            <CERTIFICATE CONTENT>
-        -----END CERTIFICATE-----
-        `}
+-----BEGIN CERTIFICATE-----
+    <CERTIFICATE CONTENT>
+-----END CERTIFICATE-----`}
         spellCheck={false}
         value={textInput}
         className="bg-primary/25 text-xs text-cyan-500"
