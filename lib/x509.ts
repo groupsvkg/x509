@@ -1,6 +1,6 @@
 import { X509Certificate } from 'crypto';
 
-const KEY_USAGE_OID_MAPPINT: Record<string, string> = {
+const KEY_USAGE_OID_MAPPING: Record<string, string> = {
   '1.3.6.1.5.5.7.3.1': 'Server authentication',
   '1.3.6.1.5.5.7.3.2': 'Client authentication',
   '1.3.6.1.5.5.7.3.3': 'Code signing',
@@ -10,7 +10,7 @@ const KEY_USAGE_OID_MAPPINT: Record<string, string> = {
 };
 
 export function getKeyUsage(keyUsage: string[]) {
-  return keyUsage?.map((oid) => KEY_USAGE_OID_MAPPINT[oid]);
+  return keyUsage?.map((oid) => KEY_USAGE_OID_MAPPING[oid]);
 }
 
 export function getAuthorityInformationAccess(infoAccess: string | undefined) {

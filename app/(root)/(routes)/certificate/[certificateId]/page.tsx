@@ -8,10 +8,12 @@ import axios from 'axios';
 import { ChangeEventHandler, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
+import { Loader2 } from 'lucide-react';
 
 const CertificateIdPage = () => {
   const [textInput, setTextInput] = useState<string>('');
   const [parsedCert, setParsedCert] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = (e) => {
     const text: string = e.target.value;
@@ -21,12 +23,14 @@ const CertificateIdPage = () => {
   };
 
   const onClick = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.post('/api/certificate', {
         cert: textInput,
       });
 
       setParsedCert(response.data);
+      setIsLoading(false);
     } catch (error) {
       console.log(`CERTIFICATE_POST Error`);
     }
@@ -53,6 +57,7 @@ const CertificateIdPage = () => {
       >
         Find Certificate Chain
       </Button>
+      {isLoading && <Loader2 className="h-8 w-8 text-red-800 animate-spin" />}
       {parsedCert && (
         <div className={cn('w-full')}>
           <Separator className="bg-primary/10" />
