@@ -50,7 +50,7 @@ const CertificateIdPage = () => {
 -----END CERTIFICATE-----`}
         spellCheck={false}
         value={textInput}
-        className="bg-primary/25 text-xs text-cyan-500"
+        className="bg-primary/5 text-xs text-cyan-500"
       />
       <Button
         onClick={onClick}
