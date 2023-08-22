@@ -14,7 +14,7 @@ export function getKeyUsage(keyUsage: string[]) {
 }
 
 export function getAuthorityInformationAccess(infoAccess: string | undefined) {
-  if (!infoAccess) return [];
+  if (!infoAccess) return {};
 
   const transformedData = infoAccess.split('\n').map((line) => {
     const fields = line.split(' - URI:');

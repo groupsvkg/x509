@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, Plus } from 'lucide-react';
+import { Home, Link } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
@@ -16,9 +16,9 @@ const Sidebar = () => {
       label: 'Home',
     },
     {
-      icon: Plus,
+      icon: Link,
       href: '/certificate/new',
-      label: 'Add',
+      label: 'Chain',
     },
   ];
 
