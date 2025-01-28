@@ -1,5 +1,7 @@
 # X509
 
+A web application to extract and display the complete certificate chain for any input X.509 certificate.
+
 ## Example Certificate
 
 ```pem
